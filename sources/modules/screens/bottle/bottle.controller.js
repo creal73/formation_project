@@ -29,6 +29,12 @@
       });
     };
 
+    vm.deleteBottle = function (bottleId) {
+      bottleService.deleteBottle(bottleId).then(function () {
+        init();
+      });
+    };
+
     init();
 
     /*

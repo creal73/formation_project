@@ -34,11 +34,23 @@
       }
 
       return restService
-        .post(ROUTES.bottle, {
+        .post(ROUTES.bottle,
+        {
           cellarId: cellarId,
           name: newBottle.name,
           price: newBottle.price
         });
+    };
+
+    service.deleteBottle = function (bottleId) {
+
+      if (!bottleId && bottleId !== 0) {
+        throw 'bottleService.deleteBottle: bottleId must be defined';
+      }
+
+      return restService
+        .delete(ROUTES.bottle + '/' + bottleId);
+
     };
 
     return service;

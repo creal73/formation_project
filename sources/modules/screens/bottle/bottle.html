@@ -7,11 +7,17 @@
         <a data-ui-sref="app.cellar.list"><i class="fa fa-arrow-left"></i></a>
         &nbsp;{{ 'T_BOTTLES_TITLE' | translate }} {{vm.cellar.name}}
       </div>
+
       <div class="panel-body">
         <ul class="list-group">
           <li class="list-group-item" data-ng-repeat="bottle in vm.cellar.bottles">
-            <span>{{bottle.name}}</span>
-            <span class="pull-right">{{bottle.price}} €</span>
+            {{bottle.name}}
+            <span class="pull-right">
+              <span>{{bottle.price}} €</span>&nbsp;
+              <button class="btn btn-xs" data-ng-click="vm.deleteBottle(bottle.id)">
+                <span><i class="fa fa-trash-o"></i></span>
+              </button>
+            </span>
           </li>
         </ul>
       </div>
