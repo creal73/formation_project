@@ -25,6 +25,11 @@ msgstr "Home"
 msgid "T_ABOUT"
 msgstr "About"
 
+#. Placeholder for name input
+msgid "T_INPUT_NAME"
+msgstr "Name"
+
+
 # --------------------------------------------------
 # Homepage
 # --------------------------------------------------
@@ -49,4 +54,10 @@ msgstr "Cellars"
 
 msgid "T_CELLARS_TITLE"
 msgstr "List of cellars"
+
+msgid "T_CELLAR_NAME"
+msgstr "Cellar name"
+
+msgid "T_ADD_CELLAR"
+msgstr "Add a new cellar"
 

@@ -1,10 +1,35 @@
 <section id="cellar-screen" class="cellar-screen container-fluid">
   <div ui-loading="vm.isLoading"></div>
-  <div>
-    <h1 translate>T_CELLARS_TITLE</h1>
 
-    <div>
+  <div class="col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading" translate>T_CELLARS_TITLE</div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item" data-ng-repeat="cellar in vm.cellars">
+            {{cellar.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
+  <div class=col-xs-6>
+    <div class="panel panel-default">
+      <div class="panel-heading" translate>T_ADD_CELLAR</div>
+      <div class="panel-body">
+
+        <form name="cellarForm">
+          <div class="form-group">
+              <label for="newCellarName" translate>T_CELLAR_NAME</label>
+              <input id="newCellarName" class="form-control" type="text" data-ng-required="true" data-ng-model="vm.newCellar.name"
+                     placeholder="{{ 'T_INPUT_NAME' | translate }}"/>
+          </div>
+          <button type="submit" class="btn btn-default pull-right" data-ng-disabled="!cellarForm.$valid" data-ng-click="vm.addCellar(vm.newCellar)"><i
+            class="fa fa-plus-circle"></i></button>
+
+        </form>
+      </div>
     </div>
   </div>
 </section>

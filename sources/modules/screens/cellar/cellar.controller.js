@@ -23,6 +23,13 @@
 
     vm.isLoading = true;
     vm.cellars = [];
+    vm.newCellar = {};
+
+    vm.addCellar = function (newCellar) {
+      cellarService.addCellar(angular.copy(newCellar)).then(function () {
+        init();
+      });
+    };
 
     init();
 
@@ -36,7 +43,9 @@
     function init() {
       logger.log('init');
 
-      vm.cellars = cellarService.getCellars();
+      cellarService.getCellar().then(function (response) {
+        vm.cellars = response.data;
+      });
 
       vm.isLoading = false;
     }

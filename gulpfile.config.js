@@ -31,9 +31,10 @@ exports.paths = {
 exports.backendProxy = {
   context: '/api',
   options: {
-    pathRewrite: { '^/api' : '' },
-    target: 'http://api.icndb.com',
-    changeOrigin: true
+    //pathRewrite: { '^/api' : '' },
+    //target: 'http://api.icndb.com',
+    target: 'http://localhost:9000'
+    //changeOrigin: true
   }
 };
 

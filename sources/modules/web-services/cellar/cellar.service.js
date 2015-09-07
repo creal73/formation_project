@@ -13,7 +13,7 @@
      */
 
     var ROUTES = {
-      cellars: '/cellars'
+      cellar: '/cellar'
     };
 
     /*
@@ -22,9 +22,22 @@
 
     var service = {};
 
-    service.getCellars = function () {
+    /**
+     * Gets the list of cellars
+     * @returns {*}
+     */
+    service.getCellar = function () {
       return restService
-        .get(ROUTES.cellars, null, true);
+        .get(ROUTES.cellar, null, false);
+    };
+
+    /**
+     * Create a new cellar
+     * @param newCellar
+     */
+    service.addCellar = function (newCellar) {
+      return restService
+        .post(ROUTES.cellar, newCellar);
     };
 
     return service;
