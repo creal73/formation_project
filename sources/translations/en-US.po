@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en-US\n"
+
+# --------------------------------------------------
+# APP
+# --------------------------------------------------
+
+#. Application name. Do not translate.
+msgid "T_APP_NAME"
+msgstr "Starter Kit"
+
+#. Company name. Do not translate.
+msgid "T_APP_COMPANY"
+msgstr "Company"
+
+#. Home section
+msgid "T_HOME"
+msgstr "Home"
+
+#. About section
+msgid "T_ABOUT"
+msgstr "About"
+
+# --------------------------------------------------
+# Homepage
+# --------------------------------------------------
+
+#. Say hello to our users
+msgid "T_HELLO"
+msgstr "Hello world !"
+
+# --------------------------------------------------
+# About
+# --------------------------------------------------
+
+#. Application version
+msgid "T_VERSION"
+msgstr "Version"
+
+# --------------------------------------------------
+# Cellar
+# --------------------------------------------------
+msgid "T_CELLAR"
+msgstr "Cellars"
+
+msgid "T_CELLARS_TITLE"
+msgstr "List of cellars"
+
