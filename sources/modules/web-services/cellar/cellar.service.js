@@ -33,7 +33,7 @@
 
     /**
      * Create a new cellar
-     * @param newCellar
+     * @param {Object} newCellar
      */
     service.addCellar = function (newCellar) {
       return restService
@@ -42,7 +42,7 @@
 
     /**
      * Gets the cellar from the given id
-     * @param cellarId The id of the cellar to get
+     * @param {number} cellarId The id of the cellar to get
      * @returns {*}
      */
     service.getCellar = function (cellarId) {
@@ -51,10 +51,8 @@
         throw 'cellarService.getCellar: cellarId must be defined';
       }
 
-      return restService
-        .get(ROUTES.cellar + '/' + cellarId);
+      return restService.get(ROUTES.cellar + '/' + cellarId);
     };
-
 
     return service;
   }

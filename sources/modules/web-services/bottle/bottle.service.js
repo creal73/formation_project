@@ -24,8 +24,8 @@
 
     /**
      * Create a new bottle
-     * @param cellarId
-     * @param newBottle
+     * @param {number} cellarId
+     * @param {object} newBottle
      */
     service.addBottle = function (cellarId, newBottle) {
 
@@ -48,9 +48,7 @@
         throw 'bottleService.deleteBottle: bottleId must be defined';
       }
 
-      return restService
-        .delete(ROUTES.bottle + '/' + bottleId);
-
+      return restService.delete(ROUTES.bottle + '/' + bottleId);
     };
 
     return service;

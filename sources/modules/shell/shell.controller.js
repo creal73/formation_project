@@ -14,6 +14,7 @@
   function ShellController($locale,
                            $state,
                            logger,
+                           _,
                            config) {
 
     logger = logger.getLogger('shell');
