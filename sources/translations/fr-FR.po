@@ -27,8 +27,11 @@ msgstr "A propos"
 
 #. Placeholder for name input
 msgid "T_INPUT_NAME"
-msgstr "Name"
+msgstr "Nom"
 
+#. Placeholder for name input
+msgid "T_INPUT_PRICE"
+msgstr "Prix"
 # --------------------------------------------------
 # Homepage
 # --------------------------------------------------
@@ -49,13 +52,29 @@ msgstr "Version"
 # Cellar
 # --------------------------------------------------
 msgid "T_CELLAR"
-msgstr "Cellars"
+msgstr "Caves"
 
 msgid "T_CELLARS_TITLE"
-msgstr "List of cellars"
+msgstr "Liste des caves"
 
 msgid "T_CELLAR_NAME"
-msgstr "Cellar name"
+msgstr "Nom de la cave"
 
 msgid "T_ADD_CELLAR"
-msgstr "Add a new cellar"
+msgstr "Ajouter une nouvelle cave"
+
+# --------------------------------------------------
+# Bottle
+# --------------------------------------------------
+
+msgid "T_BOTTLES_TITLE"
+msgstr "Liste de bouteilles de "
+
+msgid "T_ADD_BOTTLE"
+msgstr "Ajouter une nouvelle bouteille"
+
+msgid "T_BOTTLE_NAME"
+msgstr "Nom"
+
+msgid "T_BOTTLE_PRICE"
+msgstr "Prix"

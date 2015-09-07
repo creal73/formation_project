@@ -17,6 +17,7 @@
     'about',
     'shell',
     'cellar',
+    'bottle',
 
     // Modules needed for root controller
     'helpers'

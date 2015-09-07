@@ -26,7 +26,7 @@
      * Gets the list of cellars
      * @returns {*}
      */
-    service.getCellar = function () {
+    service.getCellars = function () {
       return restService
         .get(ROUTES.cellar, null, false);
     };
@@ -40,8 +40,23 @@
         .post(ROUTES.cellar, newCellar);
     };
 
-    return service;
+    /**
+     * Gets the cellar from the given id
+     * @param cellarId The id of the cellar to get
+     * @returns {*}
+     */
+    service.getCellar = function (cellarId) {
 
+      if (!cellarId) {
+        throw 'cellarService.getCellar: cellarId must be defined';
+      }
+
+      return restService
+        .get(ROUTES.cellar + '/' + cellarId);
+    };
+
+
+    return service;
   }
 
 })();

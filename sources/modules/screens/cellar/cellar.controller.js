@@ -31,6 +31,12 @@
       });
     };
 
+    vm.deleteCellar = function (cellarId) {
+      cellarService.deleteCellar(cellarId).then(function () {
+        init();
+      });
+    };
+
     init();
 
     /*
@@ -43,8 +49,8 @@
     function init() {
       logger.log('init');
 
-      cellarService.getCellar().then(function (response) {
-        vm.cellars = response.data;
+      cellarService.getCellars().then(function (response) {
+        vm.cellars = angular.copy(response.data);
       });
 
       vm.isLoading = false;

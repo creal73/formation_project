@@ -55,8 +55,18 @@
       })
       .state('app.cellar', {
         url: '/cellar',
+        abstract: true,
+        templateUrl: '<data-ui-view>'
+      })
+      .state('app.cellar.list', {
+        url: '/list',
         templateUrl: 'modules/screens/cellar/cellar.html',
         controller: 'cellarController as vm'
+      })
+      .state('app.cellar.detail', {
+        url: '/{cellarId}',
+        templateUrl: 'modules/screens/bottle/bottle.html',
+        controller: 'bottleController as vm'
       });
   }
 

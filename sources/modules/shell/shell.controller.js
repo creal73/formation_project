@@ -33,7 +33,7 @@
      * @return {boolean} True if the specified state name is the current.
      */
     vm.isCurrentState = function(name) {
-      return $state.current.name === name;
+      return _.startsWith($state.current.name, name);
     };
 
     init();

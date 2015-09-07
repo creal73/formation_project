@@ -28,7 +28,13 @@ describe('cellarService', function () {
       var deferred = $q.defer();
       deferred.resolve({});
       return deferred.promise;
-    })
+    });
+
+    spyOn(restService, 'delete').and.callFake(function () {
+      var deferred = $q.defer();
+      deferred.resolve({});
+      return deferred.promise;
+    });
   });
 
   it('should have a getCellar method', function () {
@@ -61,6 +67,5 @@ describe('cellarService', function () {
       expect(restService.post).toHaveBeenCalledWith('/cellar', {name: 'cellar'});
 
     });
-  })
-
+  });
 });
