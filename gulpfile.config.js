@@ -33,8 +33,8 @@ exports.backendProxy = {
   options: {
     //pathRewrite: { '^/api' : '' },
     //target: 'http://api.icndb.com',
-    target: 'http://localhost:9000'
-    //changeOrigin: true
+    target: 'http://apitraining.azurewebsites.net',
+    changeOrigin: true
   }
 };
 

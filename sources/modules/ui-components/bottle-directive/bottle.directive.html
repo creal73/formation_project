@@ -1,0 +1,14 @@
+<div>
+  <ul class="list-group">
+    <li class="list-group-item" data-ng-repeat="bottle in bottles">
+      {{bottle.name}}
+      <span class="pull-right">
+        <span>{{bottle.price | currency:"€" }}</span>&nbsp;
+        <button class="btn btn-xs" data-ng-if="displayTrashButton" data-ng-click="trashAction(bottle.id)">
+          <span><i class="fa fa-trash-o"></i></span>
+        </button>
+      </span>
+    </li>
+  </ul>
+</div>
+

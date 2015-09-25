@@ -9,17 +9,7 @@
       </div>
 
       <div class="panel-body">
-        <ul class="list-group">
-          <li class="list-group-item" data-ng-repeat="bottle in vm.cellar.bottles">
-            {{bottle.name}}
-            <span class="pull-right">
-              <span>{{bottle.price | currency:"€" }}</span>&nbsp;
-              <button class="btn btn-xs" data-ng-click="vm.deleteBottle(bottle.id)">
-                <span><i class="fa fa-trash-o"></i></span>
-              </button>
-            </span>
-          </li>
-        </ul>
+        <div bottle-directive="vm.cellar.bottles" data-display-trash-button="true" data-trash-action="vm.deleteBottle"></div>
       </div>
     </div>
   </div>

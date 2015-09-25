@@ -28,6 +28,7 @@
     vm.addCellar = function (newCellar) {
       cellarService.addCellar(angular.copy(newCellar)).then(function () {
         init();
+        vm.newCellar = {};
       });
     };
 

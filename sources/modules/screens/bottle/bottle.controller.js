@@ -26,6 +26,7 @@
     vm.addBottle = function (newBottle) {
       bottleService.addBottle($stateParams.cellarId, newBottle).then(function () {
         init();
+        vm.newBottle = {};
       });
     };
 
