@@ -5,6 +5,7 @@
 
 'use strict';
 
+var path = require('path');
 var gutil = require('gulp-util');
 var fs = require('fs');
 var bower = JSON.parse(fs.readFileSync('.bowerrc', 'utf8'));
@@ -28,15 +29,23 @@ exports.paths = {
  *
  * For more details and option, see https://github.com/chimurai/http-proxy-middleware/
  */
-exports.backendProxy = {
-  context: '/api',
-  options: {
-    //pathRewrite: { '^/api' : '' },
-    //target: 'http://api.icndb.com',
-    target: 'http://apitraining.azurewebsites.net',
-    changeOrigin: true
+exports.backendProxy = [
+  {
+    context: '/api/jokes',
+    options: {
+      pathRewrite: { '^/api': '' },
+      target: 'http://api.icndb.com',
+      changeOrigin: true
+    }
+  }, {
+    context: '/api',
+    options: {
+      target: 'http://apitraining.azurewebsites.net',
+      changeOrigin: true
+    }
   }
-};
+];
+
 
 /**
  *  Wiredep is the lib which inject bower dependencies in your project.
@@ -45,14 +54,15 @@ exports.backendProxy = {
  */
 exports.wiredep = {
   exclude: [],
-  directory: bower.directory
+  directory: path.join(exports.paths.src, bower.directory),
+  bowerJson: require('./' + path.join(exports.paths.src, 'bower.json'))
 };
 
 /**
  *  Common implementation for an error handler of a gulp plugin.
  */
-exports.errorHandler = function(title) {
-  return function(err) {
+exports.errorHandler = function (title) {
+  return function (err) {
     gutil.log(gutil.colors.red('[' + title + ']'), err.toString());
     this.emit('end');
   };

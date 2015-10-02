@@ -1,25 +1,25 @@
-(function() {
+(function () {
 
   'use strict';
 
   // Only declare here global modules needed for the application to start.
   // These modules should be kept to minimum.
   angular.module('main', [
-    // Dependencies
+  // Dependencies
     'gettext',
     'ngAnimate',
     'ngSanitize',
     'ui.router',
     'ui.bootstrap',
 
-    // Screens
+  // Screens
     'home',
     'about',
     'shell',
     'cellar',
     'bottle',
 
-    // Modules needed for root controller
+  // Modules needed for root controller
     'helpers'
   ]);
 

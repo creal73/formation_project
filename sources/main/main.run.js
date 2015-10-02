@@ -23,7 +23,7 @@
 
     /**
      * Utility method to set the language in the tools requiring it.
-     * @param {String=} language The IETF language tag.
+     * @param {String} language The IETF language tag.
      */
     $rootScope.setLanguage = function(language) {
       var isSupportedLanguage = _.contains(config.supportedLanguages, language);
@@ -48,6 +48,9 @@
      * Initializes the root controller.
      */
     function init() {
+      // Enable debug mode for translations
+      gettextCatalog.debug = config.debug;
+
       $rootScope.setLanguage();
 
       // Set REST server configuration

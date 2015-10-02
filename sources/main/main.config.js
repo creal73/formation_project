@@ -10,9 +10,9 @@
    * Configures the application (before running).
    */
   function mainConfig($stateProvider,
-                      $urlRouterProvider,
-                      $provide,
-                      config) {
+    $urlRouterProvider,
+    $provide,
+    config) {
 
     // Extend the $exceptionHandler service to output logs.
     $provide.decorator('$exceptionHandler', function ($delegate, $injector) {
@@ -27,10 +27,8 @@
     // Disable debug logs in production version
     $provide.decorator('$log', function ($delegate) {
       if (!config.debug) {
-        $delegate.log = function () {
-        };
-        $delegate.debug = function () {
-        };
+        $delegate.log = angular.noop;
+        $delegate.debug = angular.noop;
       }
       return $delegate;
     });
@@ -40,34 +38,34 @@
 
     $stateProvider
       .state('app', {
-        templateUrl: 'modules/shell/shell.html',
-        controller: 'shellController as vm'
-      })
+      templateUrl: 'modules/shell/shell.html',
+      controller: 'shellController as vm'
+    })
       .state('app.home', {
-        url: '/',
-        templateUrl: 'modules/screens/home/home.html',
-        controller: 'homeController as vm'
-      })
+      url: '/',
+      templateUrl: 'modules/screens/home/home.html',
+      controller: 'homeController as vm'
+    })
       .state('app.about', {
-        url: '/about',
-        templateUrl: 'modules/screens/about/about.html',
-        controller: 'aboutController as vm'
-      })
+      url: '/about',
+      templateUrl: 'modules/screens/about/about.html',
+      controller: 'aboutController as vm'
+    })
       .state('app.cellar', {
-        url: '/cellar',
-        abstract: true,
-        templateUrl: '<data-ui-view>'
-      })
+      url: '/cellar',
+      abstract: true,
+      templateUrl: '<data-ui-view>'
+    })
       .state('app.cellar.list', {
-        url: '/list',
-        templateUrl: 'modules/screens/cellar/cellar.html',
-        controller: 'cellarController as vm'
-      })
+      url: '/list',
+      templateUrl: 'modules/screens/cellar/cellar.html',
+      controller: 'cellarController as vm'
+    })
       .state('app.cellar.detail', {
-        url: '/{cellarId}',
-        templateUrl: 'modules/screens/bottle/bottle.html',
-        controller: 'bottleController as vm'
-      });
+      url: '/{cellarId}',
+      templateUrl: 'modules/screens/bottle/bottle.html',
+      controller: 'bottleController as vm'
+    });
   }
 
 })();
